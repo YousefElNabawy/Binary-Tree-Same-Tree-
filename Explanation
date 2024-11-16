@@ -1,0 +1,39 @@
+To check if two binary trees are the same, we need to verify two conditions:
+
+1.They are structurally identical, meaning the arrangement of nodes is the same in both trees.
+2.Corresponding nodes have the same values.
+
+We can do this recursively:
+
+  .If both nodes p and q are nullptr, they are considered the same (both trees are empty at this subtree).
+  .If only one of them is nullptr, they are not the same.
+  .If both nodes have values, we check if their values are the same, and then recursively check their left and right subtrees.
+
+
+
+Explanation:
+
+1.Base Cases:
+  .If both nodes p and q are nullptr, return true since both subtrees are empty.
+  .If only one of p or q is nullptr, return false as the trees are not identical.
+
+2.Recursive Check:
+  .Check if the values of the current nodes p and q are the same.
+  .Recursively call isSameTree on the left children of p and q.
+  .Recursively call isSameTree on the right children of p and q.
+
+3.Return:
+The result of (p->val == q->val) and the recursive results on the left and right subtrees will determine if the trees are the same.
+
+Complexity Analysis:
+
+Time Complexity: 
+𝑂(𝑛), where 𝑛 is the minimum number of nodes in the two trees, because we have to compare each node once.
+
+Space Complexity: 
+𝑂(ℎ), where ℎ is the height of the tree, for the recursion stack in the worst case.
+
+
+
+
+
