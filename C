@@ -1,3 +1,18 @@
+Explanation:
+
+1.Base Cases:
+  .If both nodes p and q are nullptr, return true since both subtrees are empty.
+  .If only one of p or q is nullptr, return false as the trees are not identical.
+
+2.Recursive Check:
+  .Check if the values of the current nodes p and q are the same.
+  .Recursively call isSameTree on the left children of p and q.
+  .Recursively call isSameTree on the right children of p and q.
+
+3.Return:
+The result of (p->val == q->val) and the recursive results on the left and right subtrees will determine if the trees are the same.
+
+
 bool isSameTree(struct TreeNode* p, struct TreeNode* q) {
      // If both nodes are NULL, they are the same
     if (p == NULL && q == NULL) {
